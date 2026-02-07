@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Signup from './Components/Signup'
 import './App.css'
 
 function App() {
@@ -6,7 +7,9 @@ function App() {
 
   return (
     <>
-    
+    <div>
+      <Signup/>
+    </div>
 
     </>
   )
