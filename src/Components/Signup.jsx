@@ -2,6 +2,10 @@ import React from 'react'
 import image from "../assets/user.png";
 import image1 from "../assets/user1.png";
 import image2 from "../assets/user2.png";
+import { IoKeyOutline } from "react-icons/io5";
+import { FiPhone } from "react-icons/fi";
+
+import { IoMailOutline } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 
 
@@ -16,22 +20,61 @@ const Signup = () => {
 
 < div className=' bg-white'>
    <h1 className='text-6xl '>Welcome to Ideally !</h1>
-    <label className="relative block w-72">
-      {/* Icon */}
-      <FaUser 
-        size={18}
-        className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
-      />
+   
+    
+  <div className="grid gap-4 w-80">
+      {/* Name */}
+      <label className="relative block">
+        <FaUser
+          size={18}
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+        />
+        <input
+          type="text"
+          placeholder="Full name"
+          className="w-full h-11 pl-10 pr-3 border rounded-md text-sm leading-none"
+        />
+      </label>
 
-      {/* Input */}
-      <input
-        type="text"
-        placeholder="Search..."
-        className="w-full h-11 rounded-md border border-gray-300
-                   pl-10 pr-3 text-sm leading-none
-                   focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-    </label>
+      {/* Email */}
+      <label className="relative block">
+        <IoMailOutline
+          size={18}
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+        />
+        <input
+          type="email"
+          placeholder="Email address"
+          className="w-full h-11 pl-10 pr-3 border rounded-md text-sm leading-none"
+        />
+      </label>
+
+      {/* Password */}
+      <label className="relative block">
+        <IoKeyOutline
+          size={18}
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          className="w-full h-11 pl-10 pr-3 border rounded-md text-sm leading-none"
+        />
+      </label>
+
+      {/* Phone */}
+      <label className="relative block">
+        <FiPhone
+          size={18}
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+        />
+        <input
+          type="tel"
+          placeholder="Phone number"
+          className="w-full h-11 pl-10 pr-3 border rounded-md text-sm leading-none"
+        />
+      </label>
+    </div>
 
  </div>
 </div>
