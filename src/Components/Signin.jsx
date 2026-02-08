@@ -20,7 +20,7 @@ const Signin = () => {
         <div className='w-full  bg-black py-8 px-6 grid  gap-8 items-center"'> 
         
         < div className=''>
-           <h1 className='text-5xl text-purple-500 font-medium m-8 mt-20 text-center '>Login in!</h1>
+           <h1 className='text-5xl text-purple-500 font-medium m-8 mt-15 text-center '>Login in!</h1>
            
           <div className="grid gap-8 w-80 mx-auto  mt-20">
               {/* Name */}
@@ -68,12 +68,20 @@ const Signin = () => {
         href="https://github.com/login"
         target="_blank"
         rel="noopener noreferrer"
-        className="p-2 border rounded-md hover:bg-purple-300"
+        className="p-2 border rounded-md ease-in duration-200 hover:bg-purple-300"
       >
     <FaGithub size={30}   /> 
+      </a>
+
+      <a
+        href="https://accounts.google.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-2 border ease-in duration-200 rounded-sm hover:bg-purple-100"
+      >
+          <FaGoogle size={30}  />
 
       </a>
-          <FaGoogle size={30}  />
 
         </div>
 
