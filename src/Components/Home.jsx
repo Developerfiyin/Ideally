@@ -15,7 +15,9 @@ const Home = () => {
       style={{ padding: 40 }}
       className="py-6 gap-3 px-4 items-center grid text-center w-full bg-black  text-purple-500 "
     >
-      <h2 className="text-3xl font-bold text-left">Write Down Your Idea</h2>
+      <h2 className="text-3xl mb-3 font-bold text-left">
+        Write Down Your Idea
+      </h2>
       <input
         name="title"
         placeholder="eg, Favour can be a goat sometimes.."
@@ -57,7 +59,7 @@ const Home = () => {
         name="features"
         placeholder="Core features (comma separated)"
         onChange={handleChange}
-        className=" resize-none w-full h-11 pl-10 focus:outline-blue-400 border-purple-500 pr-3 border rounded-md text-sm leading-none text-center placeholder:mr-3 "
+        className=" resize-none w-full h-11 pt-4 pl-10 focus:outline-blue-400 border-purple-500 pr-3 border rounded-md text-sm leading-none placeholder:mr-3 "
       />
       <br />
 
