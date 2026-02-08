@@ -1,6 +1,8 @@
 import React from 'react'
 import { IoKeyOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
@@ -10,8 +12,8 @@ const Signin = () => {
       const navigate = useNavigate();
 
   const goToSignIn = () => {
-    navigate("/signin");
-  }
+    navigate("/home");
+  }  
   return (
     
     
@@ -20,7 +22,7 @@ const Signin = () => {
         < div className=''>
            <h1 className='text-5xl text-purple-500 font-medium m-8 mt-20 text-center '>Login in!</h1>
            
-          <div className="grid gap-8 w-80 mx-auto  mt-50">
+          <div className="grid gap-8 w-80 mx-auto  mt-20">
               {/* Name */}
               <label className="relative block ">
                 <FaUser
@@ -48,11 +50,6 @@ const Signin = () => {
               </label>
             </div>
         
-
-            
-      
-         
-        
          </div>
             
              <div className='max-w-md mx-auto p-6 border rounded-md justify-center'>
@@ -63,6 +60,27 @@ const Signin = () => {
           Get Started
          </button>
         </div>   
+       <h2 className='text-purple-500 mx-auto'>Or login with your
+        <div className='flex justify-between gap-5 mt-5'>
+
+
+          <a
+        href="https://github.com/login"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-2 border rounded-md hover:bg-purple-300"
+      >
+    <FaGithub size={30}   /> 
+
+      </a>
+          <FaGoogle size={30}  />
+
+        </div>
+
+          </h2>
+         
+          
+
         </div>
     
 
