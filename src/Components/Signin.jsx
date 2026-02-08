@@ -58,9 +58,9 @@ const Signin = () => {
              <div className='max-w-md mx-auto p-6 border rounded-md justify-center'>
             <button
            onClick={goToSignIn}
-          className="mt-4 text-purple-500 hover:bg-white border py-2 px-3 rounded-xl"
+          className="mt-4 text-purple-500  w-full hover:bg-purple-500 hover:text-black ease-in-out duration-300 border py-2 px-3 rounded-xl"
          >
-          Already have an account? Sign In
+          Get Started
          </button>
         </div>   
         </div>
