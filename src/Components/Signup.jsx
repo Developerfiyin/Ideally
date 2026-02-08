@@ -7,8 +7,14 @@ import { FiPhone } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { IoMailOutline } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
+
+  const goToSignIn = () => {
+    navigate("/home");
+  };
   return (
     <div className='w-full text-white  bg-black py-8 px-6 grid  gap-8 items-center"'>
       {/*Second div */}
@@ -88,7 +94,10 @@ const Signup = () => {
             />
           </label>
 
-          <button className="w-full h-11  bg-purple-500 font-medium hover:bg-black hover:text-purple-700 rounded-md text-base leading-none text-center ">
+          <button
+            onClick={goToSignIn}
+            className="w-full h-12 ease-in duration-500  bg-purple-500 font-medium hover:bg-black hover:text-purple-700 rounded-md text-base leading-none text-center "
+          >
             Sign Up
           </button>
         </div>
