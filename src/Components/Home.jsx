@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useIdeaFlow } from "../hooks/Ideaflow";
 
 const Home = () => {
-     const { idea, setIdea } = useIdeaFlow();
+  const { idea, setIdea } = useIdeaFlow();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -11,16 +11,24 @@ const Home = () => {
   };
 
   return (
-    <div style={{ padding: 40 }}  className='py-8 gap-3 px-4 items-center grid text-center w-full bg-blue-200 text-purple-500'>
-      <h2 className='text-3xl font-bold text-left '>Write Down Your Idea</h2>
-      <input name="title" placeholder="eg, Favour can be a goat sometimes.." onChange={handleChange} className='w-full h-11 pl-10 focus:outline-blue-400 border-purple-500 pr-3 border rounded-md text-sm leading-none"'/>
+    <div
+      style={{ padding: 40 }}
+      className="py-6 gap-3 px-4 items-center grid text-center w-full bg-black  text-purple-500 "
+    >
+      <h2 className="text-3xl font-bold text-left">Write Down Your Idea</h2>
+      <input
+        name="title"
+        placeholder="eg, Favour can be a goat sometimes.."
+        onChange={handleChange}
+        className='w-full h-11 pl-10 focus:outline-blue-400 border-purple-500 pr-3 border rounded-md text-sm leading-none"'
+      />
       <br />
 
       <textarea
         name="problem"
         placeholder="What problem does it solve?"
         onChange={handleChange}
-        className='resize-none w-full '
+        className="resize-none w-full h-15 pl-10 focus:outline-blue-400 border-purple-500 pr-3 border rounded-md text-2xl leading-none"
       />
       <br />
 
@@ -28,10 +36,15 @@ const Home = () => {
         name="users"
         placeholder="Target users (comma separated)"
         onChange={handleChange}
+        className='w-full h-10  pl-10 focus:outline-blue-400 border-purple-500 pr-3 border rounded-md text-sm leading-none"'
       />
       <br />
 
-      <select name="platform" onChange={handleChange}>
+      <select
+        name="platform"
+        onChange={handleChange}
+        className=" w-full h-11 pl-10 focus:outline-blue-400 border-purple-500 pr-3 border rounded-md text-sm leading-none "
+      >
         <option value="">Select platform</option>
         <option value="web">Web</option>
         <option value="mobile">Mobile</option>
@@ -43,18 +56,18 @@ const Home = () => {
         name="features"
         placeholder="Core features (comma separated)"
         onChange={handleChange}
+        className=" resize-none w-full h-11 pl-10 focus:outline-blue-400 border-purple-500 pr-3 border rounded-md text-sm leading-none text-center "
       />
       <br />
 
-      <button onClick={() => navigate("/prd")}>Next</button>
+      <button
+        onClick={() => navigate("/prd")}
+        className="py-3 px-6 rounded-2xl bg-purple-400 mx-auto"
+      >
+        Next
+      </button>
     </div>
+  );
+};
 
-  )
-}
-
-export default  Home
-
-
-
-
-
+export default Home;
