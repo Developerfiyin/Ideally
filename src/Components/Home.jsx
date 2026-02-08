@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useIdeaFlow } from "../hooks/Ideaflow";
+import { createEmptyIdea } from "../hooks/Ideaflow";
 
 const Home = () => {
-  const { idea, setIdea } = useIdeaFlow();
+  const { idea, setIdea } = createEmptyIdea();
   const navigate = useNavigate();
 
   const handleChange = (e) => {

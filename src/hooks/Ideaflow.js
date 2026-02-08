@@ -1,16 +1,15 @@
-import { useState } from "react";
-
-export function useIdeaFlow() {
-  const [idea, setIdea] = useState({
-    title: "",
+export const createEmptyIdea = () => ({
+  id: crypto.randomUUID(),
+  title: "",
+  description: "",
+  prd: {
     problem: "",
-    users: "",
-    platform: "",
-    features: ""
-  });
-
-  return { idea, setIdea };
-}
-
-
-
+    targetUsers: "",
+    features: [],
+    userFlow: "",
+    techPrefs: "",
+  },
+  status: "draft", // draft | ready | built
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+});
