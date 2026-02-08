@@ -63,7 +63,7 @@ const Home = () => {
 
       <button
         onClick={() => navigate("/prd")}
-        className="py-3 px-6 rounded-2xl bg-purple-400 mx-auto"
+        className="py-3 px-6 rounded-2xl border border-purple-400 mx-auto  hover:text-white"
       >
         Next
       </button>
