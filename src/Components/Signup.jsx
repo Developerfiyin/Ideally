@@ -4,7 +4,7 @@ import image1 from "../assets/user1.png";
 import image2 from "../assets/user2.png";
 import { IoKeyOutline } from "react-icons/io5";
 import { FiPhone } from "react-icons/fi";
-
+import { Link } from "react-router-dom";
 import { IoMailOutline } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 
@@ -54,7 +54,7 @@ const Signup = () => {
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Password" required
           className="w-full h-11 pl-10 pr-3 focus:outline-blue-400 border border-purple-500 rounded-md text-sm leading-none"
         />
       </label>
@@ -68,7 +68,7 @@ const Signup = () => {
         />
         <input
           type="password"
-          placeholder="Confirm Password"
+          placeholder="Confirm Password" required
           className="w-full h-11 pl-10 pr-3 border rounded-md text-sm leading-none focus:outline-blue-400 border-purple-500 "
         />
       </label>
@@ -81,7 +81,7 @@ const Signup = () => {
         />
         <input
           type="tel"
-          placeholder="Phone number"
+          placeholder="Phone number" required
           className="w-full h-11 pl-10 pr-3 border rounded-md text-sm border-purple-500 leading-none focus:outline-blue-400"
         />
       </label>
@@ -90,7 +90,12 @@ const Signup = () => {
     </div>
 
   <h2 className='text-purple-300'>have an account already? 
-    <a href="/">Sign In</a>
+    <Link
+          to="/Signin"
+          className="text-blue-500 hover:underline"
+        >
+          Sign In
+        </Link>
   </h2>
  </div>
     
