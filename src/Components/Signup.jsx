@@ -89,7 +89,7 @@ const Signup = () => {
       <button className='w-full h-11 border bg-purple-500 font-medium hover:bg-black hover:text-purple-700 rounded-md text-base leading-none text-center '>Sign Up</button>
     </div>
 
-  <h2 className='text-purple-300'>have an account already? 
+  <h2 className='text-purple-300'>Have an account already? 
     <Link
           to="/Signin"
           className="text-blue-500 hover:underline"
@@ -97,6 +97,7 @@ const Signup = () => {
           Sign In
         </Link>
   </h2>
+
  </div>
     
 </div>
