@@ -21,7 +21,7 @@ const Signup = () => {
 
       <div className=" mt-15">
         <h1 className="text-5xl  text-purple-500 font-medium m-8  text-center ">
-          Welcome to Ideally !
+          Welcome to Ideally!
         </h1>
 
         <div className="grid gap-4 w-80 mx-auto ">
