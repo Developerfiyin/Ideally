@@ -6,6 +6,7 @@ import Home from "./Components/Home";
 import Signin from "./Components/Signin";
 import Dash from "./Components/Dash";
 import { IdeaGrid } from "./Components/idea";
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/home" element={<Home />} /> {/* Home page */}
           <Route path="/dash" element={<Dash />} /> {/* TEMPOARY HOME PAGE */}
           <Route path="/idea" element={<IdeaGrid />} />
+          <Route path="/ai" element={<sendToAI />} />
         </Routes>
       </div>
     </>

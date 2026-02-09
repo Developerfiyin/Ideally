@@ -17,7 +17,7 @@ const Dash = ({ onGenerate, loading }) => {
     // Save data for next screen
     sessionStorage.setItem("idea", idea);
     sessionStorage.setItem("prd", prd);
-    navigate("/home");
+    navigate("/card");
   };
 
   return (

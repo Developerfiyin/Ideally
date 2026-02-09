@@ -1,5 +1,3 @@
-import { IdeaCard } from "./card";
-
 export function IdeaGrid({ ideas }) {
   return (
     <div
