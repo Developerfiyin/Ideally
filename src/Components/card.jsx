@@ -1,3 +1,5 @@
+import Status from "./Status";
+
 export function IdeaCard({ idea }) {
   return (
     <div
@@ -10,7 +12,7 @@ export function IdeaCard({ idea }) {
       <h3>{idea.title}</h3>
       <p>{idea.description}</p>
 
-      <StatusBadge status={idea.status} />
+      <Status status={idea.status} />
 
       <button style={{ marginTop: "1rem" }}>Open</button>
     </div>
