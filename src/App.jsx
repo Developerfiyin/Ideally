@@ -7,6 +7,7 @@ import Signin from "./Components/Signin";
 import Dash from "./Components/Dash";
 import { IdeaGrid } from "./Components/idea";
 
+import BuildPage from "./Components/card";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -19,7 +20,7 @@ function App() {
           <Route path="/home" element={<Home />} /> {/* Home page */}
           <Route path="/dash" element={<Dash />} /> {/* TEMPOARY HOME PAGE */}
           <Route path="/idea" element={<IdeaGrid />} />
-          <Route path="/ai" element={<sendToAI />} />
+          <Route path="/build" element={<BuildPage />} />
         </Routes>
       </div>
     </>

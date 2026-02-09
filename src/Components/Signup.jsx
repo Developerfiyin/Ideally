@@ -13,14 +13,14 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const goToSignIn = () => {
-    navigate("/home");
+    navigate("/dash");
   };
   return (
     <div className='w-full text-white  bg-black py-8 px-6 grid  gap-8 items-center"'>
       {/*Second div */}
 
-      <div className="">
-        <h1 className="text-5xl text-purple-500 font-medium m-8 mt-10 text-center ">
+      <div className=" mt-15">
+        <h1 className="text-5xl  text-purple-500 font-medium m-8 mt-10 text-center ">
           Welcome to Ideally !
         </h1>
 
@@ -96,7 +96,7 @@ const Signup = () => {
 
           <button
             onClick={goToSignIn}
-            className="w-full h-12 ease-in duration-500  bg-purple-500 font-medium hover:bg-black hover:text-purple-700 rounded-md text-base leading-none text-center "
+            className="w-full h-12 ease-in duration-500 mt-5  bg-purple-500 font-medium hover:bg-black hover:text-purple-700 rounded-md text-base leading-none text-center "
           >
             Sign Up
           </button>
@@ -105,7 +105,7 @@ const Signup = () => {
         <h2 className="text-purple-300">
           Have an account already?
           <Link to="/Signin" className="text-blue-500 hover:underline">
-            Sign In
+            Log in
           </Link>
         </h2>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const Dash = ({ onGenerate, loading }) => {
+const Dash = ({ loading }) => {
   const navigate = useNavigate();
 
   const [idea, setIdea] = useState("");
@@ -17,11 +17,11 @@ const Dash = ({ onGenerate, loading }) => {
     // Save data for next screen
     sessionStorage.setItem("idea", idea);
     sessionStorage.setItem("prd", prd);
-    navigate("/card");
+    navigate("/build");
   };
 
   return (
-    <div style={styles.card} className="bg-black  py-8 px-6 grid">
+    <div style={styles.card} className="bg-black h-screen py-8 px-6 grid">
       <label className="text-3xl font-medium mt-8 text-purple-400">
         App Idea
       </label>
