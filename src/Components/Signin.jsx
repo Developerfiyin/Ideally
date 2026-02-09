@@ -11,7 +11,7 @@ const Signin = () => {
   const navigate = useNavigate();
 
   const goToSignIn = () => {
-    navigate("/home");
+    navigate("/dash");
   };
   return (
     <div className='w-full  bg-black text-white py-8 px-6 grid  gap-8 items-center"'>
