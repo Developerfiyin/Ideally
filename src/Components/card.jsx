@@ -26,8 +26,10 @@ export default function BuildPage() {
     <div style={styles.page}>
       <div style={styles.container}>
         <header style={styles.header}>
-          <h1> App Build Result</h1>
-          <p>Your AI-generated project structure</p>
+          <h1 className="text-3xl font-semibold"> App Build Result</h1>
+          <p className="text-xl font-semibold mt-6 ">
+            Your AI-generated project structure
+          </p>
         </header>
 
         {loading ? (
@@ -36,8 +38,8 @@ export default function BuildPage() {
             <p>Building your app...</p>
           </div>
         ) : (
-          <div style={styles.resultCard}>
-            <pre style={styles.code}>{result}</pre>
+          <div style={styles.resultCard} className="font-semibold text-white">
+            <pre style={styles.code}>{result} </pre>
           </div>
         )}
       </div>
@@ -48,7 +50,7 @@ export default function BuildPage() {
 const styles = {
   page: {
     minHeight: "100vh",
-    backgroundColor: "black",
+    backgroundColor: "white",
     padding: "40px 20px",
     fontFamily: "Inter, sans-serif",
   },
@@ -57,7 +59,7 @@ const styles = {
     margin: "0 auto",
   },
   header: {
-    marginBottom: "24px",
+    marginBottom: "10px",
   },
   loaderBox: {
     background: "#fff",
@@ -75,15 +77,16 @@ const styles = {
     animation: "spin 1s linear infinite",
   },
   resultCard: {
-    background: "purple",
-    borderRadius: "12px",
+    background: "black",
+    borderRadius: "24px",
     padding: "24px",
+
     boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
   },
   code: {
     whiteSpace: "pre-wrap",
     fontFamily: "monospace",
-    fontSize: "14px",
+    fontSize: "25px",
     lineHeight: 1.6,
   },
 };
