@@ -1,6 +1,8 @@
 import React from "react";
+import { Header } from "./Header";
 import { useState } from "react";
 import { mockIdeas } from "../data/tempoary";
+import { IdeaGrid } from "./idea";
 
 const Dash = () => {
   const [ideas, setIdeas] = useState(mockIdeas);
