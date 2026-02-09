@@ -1,6 +1,25 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-const Dash = ({ idea, prd, setIdea, setPrd, onGenerate, loading }) => {
+const Dash = ({ onGenerate, loading }) => {
+  const navigate = useNavigate();
+
+  const [idea, setIdea] = useState("");
+  const [prd, setPrd] = useState("");
+
+  const handleGenerate = () => {
+    if (!idea || !prd) {
+      alert("Fill in both fields");
+      return;
+    }
+
+    // Save data for next screen
+    sessionStorage.setItem("idea", idea);
+    sessionStorage.setItem("prd", prd);
+    navigate("/home");
+  };
+
   return (
     <div style={styles.card} className="bg-black  py-8 px-6 grid">
       <label className="text-3xl font-medium mt-8 text-purple-400">
@@ -29,7 +48,7 @@ const Dash = ({ idea, prd, setIdea, setPrd, onGenerate, loading }) => {
 
       <button
         className="border border-purple-400 text-purple-400 mt-9 hover:bg-purple-500 mx-auto rounded-2xl font-semibold text-2xl hover:text-black "
-        onClick={onGenerate}
+        onClick={handleGenerate}
         disabled={loading}
         style={styles.button}
       >
