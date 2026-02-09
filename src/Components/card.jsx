@@ -1,20 +1,69 @@
-import Status from "./Status";
+import React from 'react'
+import { useEffect, useState } from "react";
+import { sendToAI } from "../services/aiService";
 
-export function IdeaCard({ idea }) {
+
+const card = () => {
+  const [result, setResult] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const idea = sessionStorage.getItem("idea");
+    const prd = sessionStorage.getItem("prd");
+
+    if (!idea || !prd) {
+      return;
+    }
+
+    sendToAI({ idea, prd }).then((res) => {
+      setResult(res);
+      setLoading(false);
+    });
+  }, []);
+
+  if (loading) {
+    return <p>AI is building your app...</p>;
+  }
+
   return (
-    <div
-      style={{
-        border: "1px solid #ddd",
-        padding: "1rem",
-        borderRadius: "8px",
-      }}
-    >
-      <h3>{idea.title}</h3>
-      <p>{idea.description}</p>
+  <div>
+      <h1>Your App Is Ready</h1>
+      <pre>{result}</pre>
+    </div>
+  )
+}
 
-      <Status status={idea.status} />
+export default card
 
-      <button style={{ marginTop: "1rem" }}>Open</button>
+
+
+
+export default function BuildPage() {
+  const [result, setResult] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const idea = sessionStorage.getItem("idea");
+    const prd = sessionStorage.getItem("prd");
+
+    if (!idea || !prd) {
+      return;
+    }
+
+    sendToAI({ idea, prd }).then((res) => {
+      setResult(res);
+      setLoading(false);
+    });
+  }, []);
+
+  if (loading) {
+    return <p>AI is building your app...</p>;
+  }
+
+  return (
+    <div>
+      <h1>Your App Is Ready</h1>
+      <pre>{result}</pre>
     </div>
   );
 }
