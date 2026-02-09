@@ -13,14 +13,14 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const goToSignIn = () => {
-    navigate("/dash");
+    navigate("/dashboard");
   };
   return (
     <div className='w-full text-white  bg-black py-8 px-6 grid  gap-8 items-center"'>
       {/*Second div */}
 
       <div className=" mt-15">
-        <h1 className="text-5xl  text-purple-500 font-medium m-8 mt-10 text-center ">
+        <h1 className="text-5xl  text-purple-500 font-medium m-8  text-center ">
           Welcome to Ideally !
         </h1>
 
@@ -96,15 +96,16 @@ const Signup = () => {
 
           <button
             onClick={goToSignIn}
-            className="w-full h-12 ease-in duration-500 mt-5  bg-purple-500 font-medium hover:bg-black hover:text-purple-700 rounded-md text-base leading-none text-center "
+            className="w-full h-12 ease-in duration-500 mt-5 border border-purple-500 font-medium hover:bg-black hover:text-purple-700 rounded-md text-base leading-none text-center "
           >
             Sign Up
           </button>
         </div>
-
-        <h2 className="text-purple-300">
-          Have an account already?
+        <h2 className="text-center text-2xl mt-3 font-semibold ">OR</h2>
+        <h2 className="text-purple-300 text-center mt-2">
+          Have an account already? {"  "}
           <Link to="/Signin" className="text-blue-500 hover:underline">
+            {" "}
             Log in
           </Link>
         </h2>

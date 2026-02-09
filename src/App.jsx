@@ -4,7 +4,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import Signin from "./Components/Signin";
-import Dash from "./Components/Dash";
+import Dashboard from "./Components/Dashboard";
 import { IdeaGrid } from "./Components/idea";
 
 import BuildPage from "./Components/card";
@@ -18,7 +18,8 @@ function App() {
           <Route path="/" element={<Signup />} /> {/* SignUp page */}
           <Route path="/signin" element={<Signin />} /> {/* SignIn page */}
           <Route path="/home" element={<Home />} /> {/* Home page */}
-          <Route path="/dash" element={<Dash />} /> {/* TEMPOARY HOME PAGE */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          {/* TEMPOARY HOME PAGE */}
           <Route path="/idea" element={<IdeaGrid />} />
           <Route path="/build" element={<BuildPage />} />
         </Routes>
