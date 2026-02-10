@@ -89,7 +89,7 @@ const Signup = () => {
           Welcome to Ideally!
         </h1>
 
-        <form className="grid gap-4 w-80 mx-auto  " onSubmit={handleSubmit}>
+        <form className="grid gap-4 w-80 mx-auto" onSubmit={handleSubmit}>
           {/* Name */}
           <label className="relative block ">
             <FaUser
@@ -104,6 +104,7 @@ const Signup = () => {
               value={formData.username}
               onChange={handleChange}
             />
+            {errors.username && <p>{errors.username}</p>}
           </label>
 
           {/* Email */}
@@ -120,6 +121,7 @@ const Signup = () => {
               value={formData.email}
               onChange={handleChange}
             />
+            {errors.email && <p>{errors.email}</p>}
           </label>
 
           {/* Password */}
@@ -136,6 +138,7 @@ const Signup = () => {
               value={formData.password}
               onChange={handleChange}
             />
+            {errors.password && <p>{errors.password}</p>}
           </label>
 
           {/* Confirm Pasword^*/}
@@ -149,10 +152,11 @@ const Signup = () => {
               type="password"
               placeholder="Confirm Password"
               className="w-full h-11 pl-10 pr-3 border rounded-md text-sm leading-none focus:outline-blue-400 border-purple-500 "
-              name=" confirm password"
+              name=" confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
             />
+            {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
           </label>
 
           {/* Phone */}
@@ -169,6 +173,7 @@ const Signup = () => {
               value={formData.phone}
               onChange={handleChange}
             />
+            {errors.phone && <p>{errors.phone}</p>}
           </label>
 
           <button
