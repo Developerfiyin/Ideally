@@ -89,7 +89,7 @@ const Signup = () => {
           Welcome to Ideally!
         </h1>
 
-        <form className="grid gap-4 w-80 mx-auto ">
+        <form className="grid gap-4 w-80 mx-auto  " onSubmit={handleSubmit}>
           {/* Name */}
           <label className="relative block ">
             <FaUser
@@ -98,8 +98,11 @@ const Signup = () => {
             />
             <input
               type="text"
+              name="username"
               placeholder="Full name"
               className="w-full h-11 pl-10 focus:outline-blue-400 border-purple-500 pr-3 border rounded-md text-sm leading-none"
+              value={formData.username}
+              onChange={handleChange}
             />
           </label>
 
@@ -111,8 +114,11 @@ const Signup = () => {
             />
             <input
               type="email"
+              name="email"
               placeholder="Email address"
               className="w-full h-11 pl-10 focus:outline-blue-400 border-purple-500 pr-3 border rounded-md text-sm leading-none"
+              value={formData.email}
+              onChange={handleChange}
             />
           </label>
 
@@ -125,8 +131,10 @@ const Signup = () => {
             <input
               type="password"
               placeholder="Password"
-              required
               className="w-full h-11 pl-10 pr-3 focus:outline-blue-400 border border-purple-500 rounded-md text-sm leading-none"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
             />
           </label>
 
@@ -140,8 +148,10 @@ const Signup = () => {
             <input
               type="password"
               placeholder="Confirm Password"
-              required
               className="w-full h-11 pl-10 pr-3 border rounded-md text-sm leading-none focus:outline-blue-400 border-purple-500 "
+              name=" confirm password"
+              value={formData.confirmPassword}
+              onChange={handleChange}
             />
           </label>
 
@@ -154,13 +164,15 @@ const Signup = () => {
             <input
               type="tel"
               placeholder="Phone number"
-              required
               className="w-full h-11 pl-10 pr-3 border rounded-md text-sm border-purple-500 leading-none focus:outline-blue-400"
+              name="phone number"
+              value={formData.phone}
+              onChange={handleChange}
             />
           </label>
 
           <button
-            onClick={goToSignIn}
+            type="sumbit"
             className="w-full h-12 ease-in duration-500 mt-5 border border-purple-500 font-medium hover:bg-black hover:text-purple-700 rounded-md text-base leading-none text-center "
           >
             Sign Up
