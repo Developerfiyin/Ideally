@@ -8,13 +8,78 @@ import { Link } from "react-router-dom";
 import { IoMailOutline } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Signup = () => {
   const navigate = useNavigate();
 
-  const goToSignIn = () => {
-    navigate("/dashboard");
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    phone: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newErrors = {};
+
+    // USERNAME
+    if (!formData.username.trim()) {
+      newErrors.username = "Username is required";
+    } else if (formData.username.length < 3) {
+      newErrors.username = "Username must be at least 3 characters";
+    }
+
+    // EMAIL
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+
+    // PASSWORD
+    if (!formData.password) {
+      newErrors.password = "Password is required";
+    } else if (formData.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+    }
+
+    // CONFIRM PASSWORD
+    if (!formData.confirmPassword) {
+      newErrors.confirmPassword = "Please confirm your password";
+    } else if (formData.confirmPassword !== formData.password) {
+      newErrors.confirmPassword = "Passwords do not match";
+    }
+
+    // PHONE NUMBER
+    if (!formData.phone) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^\d{10,14}$/.test(formData.phone)) {
+      newErrors.phone = "Enter a valid phone number";
+    }
+
+    setErrors(newErrors);
+
+    // IF NO ERRORS → NAVIGATE
+    if (Object.keys(newErrors).length === 0) {
+      navigate("/dashboard");
+    }
+  };
+
   return (
     <div className='w-full text-white  bg-black py-8 px-6 grid  gap-8 items-center"'>
       {/*Second div */}
@@ -24,7 +89,7 @@ const Signup = () => {
           Welcome to Ideally!
         </h1>
 
-        <div className="grid gap-4 w-80 mx-auto ">
+        <form className="grid gap-4 w-80 mx-auto ">
           {/* Name */}
           <label className="relative block ">
             <FaUser
@@ -100,7 +165,7 @@ const Signup = () => {
           >
             Sign Up
           </button>
-        </div>
+        </form>
         <h2 className="text-center text-2xl mt-3 font-semibold ">OR</h2>
         <h2 className="text-purple-300 text-center mt-2">
           Have an account already? {"  "}
