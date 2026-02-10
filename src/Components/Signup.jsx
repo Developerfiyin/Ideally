@@ -152,7 +152,7 @@ const Signup = () => {
               type="password"
               placeholder="Confirm Password"
               className="w-full h-11 pl-10 pr-3 border rounded-md text-sm leading-none focus:outline-blue-400 border-purple-500 "
-              name=" confirmPassword"
+              name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
             />
@@ -169,7 +169,7 @@ const Signup = () => {
               type="tel"
               placeholder="Phone number"
               className="w-full h-11 pl-10 pr-3 border rounded-md text-sm border-purple-500 leading-none focus:outline-blue-400"
-              name="phone number"
+              name="phone"
               value={formData.phone}
               onChange={handleChange}
             />
