@@ -10,7 +10,7 @@ const Dashboard = ({ loading }) => {
 
   const handleGenerate = () => {
     if (!idea || !prd) {
-      alert("Fill in both fields");
+      alert(" Please fill in both fields to generate your app");
       return;
     }
 

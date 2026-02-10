@@ -3,14 +3,42 @@ import { IoKeyOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
-
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
+import { useState } from "react";
 
 const Signin = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [user, setUser] = useState("");
+  const [errors, setErrors] = useState({});
 
-  const goToSignIn = () => {
+  e.preventDefault();
+
+  const newErrors = {};
+
+  if (!email.trim()) {
+    newErrors.email = "Please fill in your email";
+  }
+
+  if (!user.trim()) {
+    newErrors.user = "Please fill in your name";
+  }
+
+  if (!password.trim()) {
+    newErrors.password = "Please fill in your password";
+  }
+
+  setErrors(newErrors);
+
+  // If no errors, proceed
+  if (Object.keys(newErrors).length === 0) {
+    console.log("Login successful");
+    // call login API here
+  }
+
+  const goToSignIn = (e) => {
     navigate("/dashboard");
   };
   return (
@@ -20,7 +48,7 @@ const Signin = () => {
           Login in!
         </h1>
 
-        <div className="grid gap-8 w-80 mx-auto  mt-20">
+        <div className="grid gap-8 w-80 mx-auto  mt-20" onSubmit={Signin}>
           {/* Name */}
           <label className="relative block ">
             <FaUser
@@ -30,6 +58,7 @@ const Signin = () => {
             <input
               type="text"
               placeholder="Full name"
+              value={user}
               className="w-full h-11 pl-10 focus:outline-blue-400 border-purple-500 pr-3 border rounded-md text-sm leading-none"
             />
           </label>
@@ -44,6 +73,8 @@ const Signin = () => {
               type="password"
               placeholder="Password"
               required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full h-11 pl-10 pr-3 focus:outline-blue-400 border border-purple-500 rounded-md text-sm leading-none"
             />
           </label>
