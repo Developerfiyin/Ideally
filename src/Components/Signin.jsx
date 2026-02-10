@@ -9,86 +9,77 @@ import { useState } from "react";
 
 const Signin = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
   const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
 
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const newErrors = {};
+    const newErrors = {};
 
-  if (!email.trim()) {
-    newErrors.email = "Please fill in your email";
-  }
+    if (!user.trim()) {
+      newErrors.user = "Please fill in your username";
+    }
 
-  if (!user.trim()) {
-    newErrors.user = "Please fill in your name";
-  }
+    if (!password.trim()) {
+      newErrors.password = "Please fill in your password";
+    }
 
-  if (!password.trim()) {
-    newErrors.password = "Please fill in your password";
-  }
+    setErrors(newErrors);
 
-  setErrors(newErrors);
-
-  // If no errors, proceed
-  if (Object.keys(newErrors).length === 0) {
-    console.log("Login successful");
-    // call login API here
-  }
-
-  const goToSignIn = (e) => {
-    navigate("/dashboard");
+    if (Object.keys(newErrors).length === 0) {
+      navigate("/dashboard");
+    }
   };
+
   return (
     <div className='w-full  bg-black text-white py-8 px-6 grid  gap-8 items-center"'>
-      <div className="">
-        <h1 className="text-5xl text-purple-500 font-medium m-8 mt-15 text-center ">
-          Login in!
-        </h1>
+      <h1 className="text-5xl text-purple-500 font-medium m-8 mt-5 text-center ">
+        Log in!
+      </h1>
 
-        <div className="grid gap-8 w-80 mx-auto  mt-20" onSubmit={Signin}>
-          {/* Name */}
-          <label className="relative block ">
-            <FaUser
-              size={18}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-purple-400 pointer-events-none"
-            />
-            <input
-              type="text"
-              placeholder="Full name"
-              value={user}
-              className="w-full h-11 pl-10 focus:outline-blue-400 border-purple-500 pr-3 border rounded-md text-sm leading-none"
-            />
-          </label>
+      <form className="grid gap-8 w-80 mx-auto  mt-10" onSubmit={handleSubmit}>
+        {/* Name */}
+        <label className="relative block ">
+          <FaUser
+            size={18}
+            className="absolute left-3 top-1/2 -translate-y-1/2 text-purple-400 pointer-events-none"
+          />
+          <input
+            placeholder="Akan abel"
+            className="w-full h-11 pl-10 focus:outline-blue-400 border-purple-500 pr-3 border rounded-md text-sm leading-none"
+            value={user}
+            onChange={(e) => setUser(e.target.value)}
+          />
+          {errors.user && <p>{errors.user}</p>}
+        </label>
 
-          {/* Password */}
-          <label className="relative block">
-            <IoKeyOutline
-              size={18}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-purple-400 pointer-events-none"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full h-11 pl-10 pr-3 focus:outline-blue-400 border border-purple-500 rounded-md text-sm leading-none"
-            />
-          </label>
-        </div>
-      </div>
+        {/* Password */}
+        <label className="relative block">
+          <IoKeyOutline
+            size={18}
+            className="absolute left-3 top-1/2 -translate-y-1/2 text-purple-400 pointer-events-none"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full h-11 pl-10 pr-3 focus:outline-blue-400 border border-purple-500 rounded-md text-sm leading-none"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {errors.password && <p>{errors.password}</p>}
+        </label>
 
-      <div className="max-w-md mx-auto p-6  rounded-md justify-center">
         <button
-          onClick={goToSignIn}
+          type="submit"
           className="mt-4 text-purple-500  w-full hover:bg-purple-500 hover:text-black ease-in-out duration-300 border py-2 px-3 rounded-xl"
         >
           Get Started
         </button>
-      </div>
+      </form>
+
       <h2 className="text-purple-500 mx-auto">
         Or login with your
         <div className="flex justify-between gap-5 mt-5">
