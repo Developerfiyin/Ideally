@@ -149,10 +149,10 @@ const Signup = () => {
               className="absolute left-3 top-1/2 -translate-y-1/2 text-purple-400 pointer-events-none"
             />
             <input
-              type="password"
               placeholder="Confirm Password"
               className="w-full h-11 pl-10 pr-3 border rounded-md text-sm leading-none focus:outline-blue-400 border-purple-500 "
               name="confirmPassword"
+              type="password"
               value={formData.confirmPassword}
               onChange={handleChange}
             />
